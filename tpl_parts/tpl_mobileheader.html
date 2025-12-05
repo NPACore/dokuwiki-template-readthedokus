@@ -1,6 +1,16 @@
-<?php global $conf, $lang, $ACT, $INFO ?>
+<?php global $conf, $lang, $ACT, $INFO
+// Find this file on ewi:/wiki-mrrc/lib/tpl/readthedokus/tpl_parts
+ ?>
 <!-- 20250908WF - Kludge for collapsing side menu in desktop view -->
 <a href='javascript:document.querySelector("#dokuwiki__site").classList.toggle("showSidebar")'>≡</a>
+
+<!-- 20251204WF login/logout toggle -->
+<?php
+if(isset($INFO["userinfo"])) {
+  echo "<a href=?do=logout&sectok=" . getSecurityToken() . ">⎋</a>";
+} else {
+  echo "<a href=?do=login>⎆</a>";
+} ?>
 
 <div id="mobileheader">
 	<div id="btn-mobilemenu">
